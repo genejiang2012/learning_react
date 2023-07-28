@@ -1,0 +1,33 @@
+<!--
+ * @Author: gene.jiang
+ * @Date: 2023-07-28 17:44:13
+ * @LastEditors: gene.jiang
+ * @LastEditTime: 2023-07-28 17:45:17
+ * @Description: file content
+ * @FilePath: \learning_react\1_Basic\001_hello_react_native\hello_react_1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello_React</title>
+</head>
+<body>
+    <!-- step1: import the core lib of the react -->
+    <script src="../js/react.development.js"></script>
+    <!-- step2: import the dom lib of the react -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- step3: impor the babel lib to compile the es6 to es5 -->
+    <script src="../js/babel.min.js"></script>    
+
+    <!-- define one container -->
+    <div id="test"></div>
+
+    <script type="text/babel">
+        var data = 'Hello React!'
+        const VDOM = <h1>{data}</h1>
+        ReactDOM.render(VDOM, document.getElementById("test"));
+    </script>
+    
+</body>
+</html>
