@@ -1,0 +1,39 @@
+<!--
+ * @Author: gene.jiang
+ * @Date: 2023-07-28 17:43:35
+ * @LastEditors: gene.jiang
+ * @LastEditTime: 2023-07-28 18:09:39
+ * @Description: file content
+ * @FilePath: \learning_react\1_Basic\001_hello_react_native\react_exercise.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello_React</title>
+</head>
+<body>
+    <!-- step1: import the core lib of the react -->
+    <script src="../js/react.development.js"></script>
+    <!-- step2: import the dom lib of the react -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- step3: impor the babel lib to compile the es6 to es5 -->
+    <script src="../js/babel.min.js"></script>    
+
+    <!-- define one container -->
+    <div id="test" style="width: 100%; background-color:azure;" ></div>
+
+    <script type="text/babel">
+        var myArray = ['Angular', 'React', 'Vue']
+        const listItem = myArray.map((item) => <li>{item}</li>)
+        console.log(listItem)
+        const VirtualDOM = (
+            <h1>
+                <span>Hello React!</span>
+                <ul>{listItem}</ul>
+              </h1>
+        )
+        ReactDOM.render(VirtualDOM, document.getElementById("test"));
+    </script>    
+</body>
+</html>
