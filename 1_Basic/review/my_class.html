@@ -2,7 +2,7 @@
  * @Author: gene.jiang
  * @Date: 2023-08-15 12:36:38
  * @LastEditors: gene.jiang
- * @LastEditTime: 2023-08-15 13:37:25
+ * @LastEditTime: 2023-08-16 12:58:22
  * @Description: file content
  * @FilePath: \learning_react\1_Basic\review\my_class.html
 -->
@@ -28,9 +28,33 @@
             }
         }
 
+        class Student extends Person{
+            constructor(name, age, grades){
+                super(name, age)
+                this.grades = grades
+            }
+
+            study(){
+                console.log("I work hard!")
+            }
+
+            speak(){
+                console.log(`My name is ${this.name}, my age is ${this.age}, my grades is ${this.grades}`)
+            }
+
+            
+        }
+       
         const p1 = new Person('Tom', 13)
         const p2 = new Person('Jack', 14)
+        const s1 = new Student("xiaowang", 15, "5年级")
+
+        console.log(p1)
+        console.log(s1)
+        
         p1.speak()
+        s1.speak()
+
 
     </script>
 </body>
