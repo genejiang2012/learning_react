@@ -1,0 +1,44 @@
+<!--
+ * @Author: gene.jiang
+ * @Date: 2023-08-15 12:36:38
+ * @LastEditors: gene.jiang
+ * @LastEditTime: 2023-08-29 16:08:01
+ * @Description: file content
+ * @FilePath: \learning_react\1_Basic\review\js_encrpyt.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const crypto = require('crypto');
+
+        function generateToken(apiSecret, randomStr, timestamp) {
+            const data = `apiSecret=${apiSecret}&randomStr=${randomStr}&timestamp=${timestamp}`;
+
+            // 创建一个SHA512哈希对象  
+            const hash = crypto.createHash('sha512');
+
+            // 将要哈希的数据转换为字节数组，并更新到哈希对象  
+            const bufferData = Buffer.from(data, 'utf8');
+            hash.update(bufferData);
+
+            // 获取哈希结果，并转换为十六进制字符串  
+            const hashValue = hash.digest('hex');
+
+            return hashValue;
+        }
+
+        const apiSecret = 'ucmjpwlyhdi2k6w5pxvfgvi';
+        const randomStr = 'randomstring';
+        const timestamp = Date.now().toString();
+
+        const token = generateToken(apiSecret, randomStr, timestamp);
+        console.log(token);
+    </script>
+</body>
+</html>

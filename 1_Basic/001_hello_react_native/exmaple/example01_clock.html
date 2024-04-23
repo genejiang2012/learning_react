@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello_React</title>
+</head>
+<body>
+    <!-- step1: import the core lib of the react -->
+    <script src="../js/react.development.js"></script>
+    <!-- step2: import the dom lib of the react -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- step3: impor the babel lib to compile the es6 to es5 -->
+    <script src="../js/babel.min.js"></script>    
+
+    <!-- define one container -->
+    <div id="test" style="width: 100%; background-color: greenyellow;" ></div>
+
+    <script type="text/babel">
+        function UpdateTime() {
+            return (
+                <div>
+                    <h3>Render Mechanism of Render</h3>
+                    <p>Now time is {new Date().toLocaleTimeString()}</p> 
+                </div>
+            )
+        }
+
+        ReactDOM.render(<UpdateTime />, document.getElementById("test"));
+    </script>
+    
+</body>
+</html>

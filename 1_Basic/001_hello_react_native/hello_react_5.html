@@ -1,0 +1,48 @@
+<!--
+ * @Author: gene.jiang
+ * @Date: 2023-07-28 17:43:35
+ * @LastEditors: gene.jiang
+ * @LastEditTime: 2023-08-18 19:38:11
+ * @Description: file content
+ * @FilePath: \learning_react\1_Basic\001_hello_react_native\hello_react_5.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello_React</title>
+</head>
+<body>
+    <!-- step1: import the core lib of the react -->
+    <script src="../js/react.development.js"></script>
+    <!-- step2: import the dom lib of the react -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- step3: impor the babel lib to compile the es6 to es5 -->
+    <script src="../js/babel.min.js"></script>    
+
+    <!-- define one container -->
+    <div id="test" style="width: 100%; background-color: greenyellow;" ></div>
+
+    <script type="text/babel">
+        class MyComponent extends React.Component {
+            state = {isHot: true, Windy: true};
+            
+            render() {
+                const {isHot, Windy} = this.state;
+                console.log("The render is", this)
+                return <h2 onClick={this.changeWeather}> Today is {isHot ? 'hot': 'cold'} and {Windy ? 'slow': 'heavy'}</h2>
+            }     
+            
+            changeWeather = ()=>{
+                const isHot = this.state.isHot
+                const Windy = this.state.Windy
+                this.setState({isHot: !isHot, Windy: !Windy});  
+                              
+            };
+        }
+
+        ReactDOM.render(<MyComponent />, document.getElementById("test"));
+    </script>
+    
+</body>
+</html>
